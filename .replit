@@ -1,31 +1,8 @@
 language = "c"
-run = "gcc -o /home/runner/project2/src/main /home/runner/project2/src/main.c"
+run = "gcc -o labrabota2-1 /home/runner/lab2-task1-gr13-Senko/src/main.c && ./labrabota2-1"
 
 [nix]
 channel = "stable-25_05"
 
 [agent]
 expertMode = true
-
-[workflows]
-runButton = "Project"
-
-[[workflows.workflow]]
-name = "Project"
-mode = "parallel"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Start application"
-
-[[workflows.workflow]]
-name = "Start application"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "gcc -o /home/runner/workspace/src/main /home/runner/workspace/src/main.c && /home/runner/workspace/src/main"
-
-[workflows.workflow.metadata]
-outputType = "console"
